@@ -1,0 +1,9 @@
+HDFS: Hadoop Distributed File System is a primary data storage system used by Hadoop. I includes:
+a. Client Node:
+	It is the primary node from where we get data that needs to be stored in the system. It ask for permission to name node for storing the date.
+
+b. Name Node: 
+	It analyse and review the types of date that needs to be stroed in data note. I creates and saves log of each activities.
+
+c. Data Node:
+	It saves the data in a ditribted manner. I constantly communicates with Name node for data saving. It is also know as slave
