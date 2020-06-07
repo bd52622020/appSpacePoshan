@@ -7,3 +7,6 @@ b. Name Node:
 
 c. Data Node:
 	It saves the data in a ditribted manner. I constantly communicates with Name node for data saving. It is also know as slave
+
+Multi processing and multi threding in python
+Is python multi-processing and muti-threding in parallel
