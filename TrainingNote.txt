@@ -31,5 +31,13 @@ The benefits of multithreading can be gradually increased in multiprocessing env
 
 Is python multi-processing and muti-threding in parallel
 
+Python Interpreter is a linevm that runs as a thread possesed by OS. In python if we try run two threads, it tries to run in serial order. GIL (Global Interpreter Lock) in python chech to know the stat of thread. In earlier version of python, GIL used to check the threads in 100 Tiks(instruction executed by the inteperter on bytes 1 tick = 1 byte). This process was time consuming and high overhead. In later version from python 3.2 the 100 ticks were updated to fixed time apprach (5 ms). From here each thread gets equal oppertunity and time to execute its operation. Python works as Cordinated Mutli Tasking, where each thread is run in concurrent manner.
+
+With threading, concurrency is achieved using multiple threads, but due to the GIL only one thread can be running at a time. In multiprocessing, the original process is forked process into multiple child processes bypassing the GIL. Each child process will have a copy of the entire program's memory.
+
+Both multithreading and multiprocessing allow Python code to run concurrently. But only multiprocessing will allow your code to be truly parallel. However, if your code is IO-heavy (like HTTP requests), then multithreading will still probably speed up your code.
+
+
+
 
 
