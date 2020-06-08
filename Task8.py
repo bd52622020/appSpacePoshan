@@ -7,11 +7,13 @@ from _ast import In
 class DictionaryList:
     
     def myDictionary(self):
-        dict = {"Name": " Xavier, Praketa, Danish, Poshan "}
-        print(dict)
-        food_list=list(dict.values())
-        food_list.sort()
-        print(food_list)
+        
+       dict = {"Name": "xasxsad"}
+#         print(dict)
+#         list_set = list(dict.values())
+#         list_set.sort()
+#         print(list_set)
+       print(sorted(dict.items()))
     
     def myList(self):
         print("Test")
