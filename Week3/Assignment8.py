@@ -58,16 +58,16 @@ class GetNumbers:
          
 
         
-# obj = MyPrimeNo()
-# obj.findPrimeNo()
-# 
-# obj2 = FindLepYear()
-# obj2.getYear()
+obj = MyPrimeNo()
+obj.findPrimeNo()
+ 
+obj2 = FindLepYear()
+obj2.getYear()
 
 obj3 = NumberVerification()
 obj3.getISBN()
 
-# obj4 = GetNumbers()
-# obj4.getNo()
+obj4 = GetNumbers()
+obj4.getNo()
 
 
