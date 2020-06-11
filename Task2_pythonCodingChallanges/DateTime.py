@@ -18,22 +18,7 @@ class DateAndTime:
     dayOfMonth = dateValue.strftime("%d")
     dayOfweek = dateValue.strftime("%A")
     
-    def SubstractDay(self):
-        dt = datetime.today() - timedelta(30)
-        print(dt)
-        
-        
-    def MatchChar(self, myInput):
-        print(type(myInput))
-        print(string.ascii_letters)
-        
-        if(myInput == string.ascii_letters or myInput == string.digits or myInput == "_"):
-            print("Match Found")
-            
-        else:
-            print("No Match Found")
-        
-        
+              
         
 myObj = DateAndTime()
 print("Current Date and time: ", myObj.dateValue)
@@ -46,8 +31,8 @@ print("day of the year: ", myObj.dayOfyear)
 print("day of the Month: ", myObj.dayOfMonth)
 print("day of the Week: ", myObj.dayOfweek)
 
-myObj.SubstractDay()
-myObj.MatchChar(5)
+
+
 
 
 
