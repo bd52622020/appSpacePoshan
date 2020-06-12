@@ -1,0 +1,91 @@
+HDFS: Hadoop Distributed File System is a primary data storage system used by Hadoop. I includes:
+a. Client Node:
+	It is the primary node from where we get data that needs to be stored in the system. It ask for permission to name node for storing the date.
+
+b. Name Node: 
+	It analyse and review the types of date that needs to be stroed in data note. I creates and saves log of each activities.
+
+c. Data Node:
+	It saves the data in a ditribted manner. I constantly communicates with Name node for data saving. It is also know as slave
+
+Multi processing and multi threding in python
+
+Multiprocessing
+
+	A multiprocessing system is one which has alteast two processors. The CPUs are added to the system to increase the computing speed of the system. Each CPU has its own set of registers and main memory. Just because CPUs are separate, it may happen that one CPU must not have anything to process and may sit idle and the other may be overloaded with the processes. In such cases, the processes and the resources are shared dynamically among the processors.
+	Multiprocessing can be classified as symmetric multiprocessing and asymmetric multiprocessing. In symmetric multiprocessing, all processors are free to run any process in a system. In Asymmetric multiprocessing, there is a master-slave relationship among the processors. The master processor is responsible for allotting the process to slave processors.
+	If the processor has integrated memory controller then adding processor would increase the amount of addressable memory in the system. Multiprocessing can change the memory access model from uniform memory access to nonuniform memory access. The uniform memory access amounts the same time for accessing any RAM from any Processor. On the other hands, non-uniform memory access amounts longer time to access some part of memory than the other parts.
+
+
+Multithreading
+	Multithreading is the execution of multiple threads of a single process concurrently within the context of that process. Now let us first discuss what is a thread? A thread of a process means a code segment of a process, which has its own thread ID, program counter, registers and stack and can execute independently. But threads belonging to the same process has to share the belongings of that process like code, data, and system resources.
+	Creating separate processes for each service request consumes time and exhaust system resources. Instead of incurring this overhead, it is more efficient to create threads of a process.
+	To understand the multithreading concept let us take an example of a word processor. A word processor, displays graphics, responds to keystrokes, and at the same time, it continues spelling and grammar checking. You do not have to open different word processors to do this concurrently. It does happen in a single word processor with the help of multiple threads.
+	Now let us take into consideration the benefits of multithreading. Multithreading increases the responsiveness as if one thread of a process is blocked or performing the lengthy operation, the process still continues. The second benefit of multithreading is resource sharing as several threads of a process share the same code and data within the same address space.
+	Creating a thread is economical as it shares the code and data of the process to which they belong. So the system does not have to allocate resources separately for each thread. Multithreading can be increased on multiprocessing operating systems. As multithreading on multiple CPUs increases parallelism.
+
+Conclusion:
+
+The benefits of multithreading can be gradually increased in a multiprocessing environment as multithreading on a multiprocessing system increases parallelism.
+
+
+Is python multiprocessing and muti-threding in parallel
+
+Python Interpreter is a linevm that runs as a thread possessed by OS. In python if we try to run two threads, it tries to run in serial order. GIL (Global Interpreter Lock) in python chech to know the stat of thread. In earlier versions of python, GIL used to check the threads in 100 Tiks(instruction executed by the interpreter on bytes 1 tick = 1 byte). This process was time consuming and high overhead. In later versions from python 3.2 the 100 ticks were updated to fixed time approach (5 ms). From here each thread gets equal opportunity and time to execute its operation. Python works as Coordinated Multi Tasking, where each thread is run in a concurrent manner.
+
+With threading, concurrency is achieved using multiple threads, but due to the GIL only one thread can be running at a time. In multiprocessing, the original process is forked process into multiple child processes bypassing the GIL. Each child process will have a copy of the entire program's memory.
+
+Both multithreading and multiprocessing allow Python code to run concurrently. But only multiprocessing will allow your code to be truly parallel. However, if your code is IO-heavy (like HTTP requests), then multithreading will still probably speed up your code.
+
+
+
+Task 9
+
+What are RDD Operations in Spark? 
+There are two type of RDD operations, they are
+Transformation
+Narrow Transformation
+map()
+filter()
+Wide Transformation
+groupbyKey()
+reducebyKey()
+Actions
+Lazy Operation
+Spark drivers and external storage systems store the value of action. It brings laziness of RDD into motion.
+
+2. What do you understand by Lazy Evaluation? 
+	As the name itself indicates its definition, lazy evaluation in Spark means that the execution will not start until an action is triggered. In Spark, the picture of lazy evaluation comes when Spark transformations occur.
+
+
+     2.What is a DAG in spark ? 
+	DAG (Directed Acyclic Graph) in Apache Spark is an alternative to MapReduce. It is a programming style used in distributed systems. In MapReduce, we just have two functions (map and reduce), while DAG has multiple levels that form a tree structure. Hence, DAG execution is faster than MapReduce because intermediate results do not write to disk.
+
+What is the role of a spark Driver ? 
+The spark driver is the program that defines the transformations and actions on RDDs of knowledge and submits requests to the master. Spark driver is a program that runs on the master node of the machine which declares transformations and actions on knowledge RDDs.
+In easy terms, the driver in Spark creates SparkContext, connected to a given Spark Master.It conjointly delivers the RDD graphs to Master, wherever the standalone cluster manager runs
+
+What is Shuffling in Spark ? 
+Shuffle operation is used in Spark to re-distribute data across multiple partitions. It is a costly and complex operation.
+In general a single task in Spark operates on elements in one partition. To execute shuffle, we have to run an operation on all elements of all partitions. It is also called all-to- all operation.
+
+What are the deploy modes in Spark? 
+Two deployment modes can be used to launch Spark applications on YARN:
+In cluster mode:
+Jobs are managed by the YARN cluster. The Spark driver runs inside an Application Master (AM) process that is managed by YARN. This means that the client can go away after initiating the application.
+In client mode: 
+The Spark driver runs in the client process, and the Application Master is used only to request resources from YARN.
+
+What is the difference between RDD and a dataframe ?
+DataFrame: A Data Frame is used for storing data in tables. It is equivalent to a table in a relational database but with richer optimization. It is a data abstraction and domain-specific language (DSL) applicable to a structure and semi-structured data. It is a distributed collection of data in the form of named column and row. It has a matrix-like structure whose column may be different types (numeric, logical, factor, or character ).we can say a data frame has a two-dimensional array like structure where each column contains the value of one variable and row contains one set of values for each column. It combines features of list and matrices.
+
+RDD: is the representation of a set of records, immutable collection of objects with distributed computing. RDD is a large collection of data or RDD is an array of reference for partitioned objects. Each and every dataset in RDD is logically partitioned across many servers so that they can be computed on different nodes of the cluster. RDDs are fault tolerant i.e. self-recovered/recomputed in the case of failure. The dataset could be data loaded externally by the users which can be in the form of JSON file, CSV file, text file or database via JDBC with no specific data structure.
+
+
+How does spark achieve fault tolerance ? 
+If any of the nodes of processing data gets crashed, that results in a fault in a cluster. In other words, RDD is logically partitioned and each node is operating on a partition at any point in time. Operations which are being performed is a series of scala functions. Those operations are being executed on that partition of RDD. This series of operations are merged together and create a DAG, it refers to Directed Acyclic Graph. That means DAG keeps track of operations performed.
+
+If any node crashes in the middle of an operation, the cluster manager finds out that node. Then, it tries to assign another node to continue the processing at the same place. This node will operate on the same partition of RDD and series of operations. Due to this new node, there is effectively no data loss. Meanwhile, that new node continues the processing smoothly.
+
+
+
