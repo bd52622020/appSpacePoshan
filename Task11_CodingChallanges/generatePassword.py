@@ -16,7 +16,11 @@ class GeneratePassword:
         nPassword = ''.join(random.choice(alphaLetter + specChar + numericVal) for i in range(passwordLength))
         print(nPassword)
         
-            
+def main():
+    
+    myObj = GeneratePassword()
+    myObj.newPassword()
+    
+main()
+           
        
-myObj = GeneratePassword()
-myObj.newPassword()
