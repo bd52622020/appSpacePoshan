@@ -1,0 +1,50 @@
+What is an RDD?
+	RDD stands for Resilient Distributed Datasets. It is the structure of Apache Spark. It distributes collection of memory where  data need is always stores and available is RAM. It is effortless to create and its mind-blowing property is in-memory data processing capability.
+It is fault-tolerant, so if there is loss of data in any node, it has capability to restore the data from other nodes.
+
+What is a DAG ?
+
+DAG (Directed Acyclic Graph ) is alternative to MapReduce operations. In simple word its a collection of query which gets executed when only it gets called. Unlike MapReduce, it has multiple levels that forms  a structure like tree, so it can execute  more faster.
+
+What is the role of a spark driver in the spark cluster?
+	Spark driver is a node which allows applications to create SparkContext which connect to compute resource. It executes the user code and creates a SparkSession or SparkContext and is responsible to create DataFrame, DataSet, RDD, execute SQL and so on.
+
+Is Spark fault Tolerant and how does Spark achieve that?
+Yes Spark is fault Tolerant . During the time of data processing , it receives data nd replicates the date in several nodes so that data can be retrieve from alternative node when failure.
+
+How to make a shell script executable ?
+  By typing chmod +x “filenname” command 
+
+What is the use of “#!/bin/bash” ?
+
+The first line of this command in file informs OS to run specific shell to execute commands  that follow in th script.
+
+How do you resolve variable in a shellscript.
+  By adding the variable path in .bashrc file
+
+What are the core components of Hadoop?
+ 	The components of Hadoop are:
+MapReduce
+HDFS
+YARN
+
+What is the difference between nameNodes and dataNodes?
+nameNode: 
+	Keeps the log of all the nodes and watch activities of all the nodes (master node)
+dataNodes:
+	It is the actual nodes where data is stored and retrieve from. (slave node)
+
+
+What does jps command do in Hadoop?
+
+Java virtual Machine Process Status tool is a command to inspect all the activities of Hadoop which are running.
+
+What do you mean by metadata in Hadoop?
+
+Metadata is the structure of HDFS directories and files in a tree. It also includes files and directories activities such as permissions, space(quota) etc.
+
+What is a block in HDFS, why block size 64MB?
+
+The block size is the smallest unit of data that can be store.
+Each block is of 64 MB
+
