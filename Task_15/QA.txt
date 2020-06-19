@@ -4,6 +4,7 @@ The purpose for loacal or loca[*] in scala code is to run spark locally by using
 What is the difference between map and flatMap ?
 map()
 map() is the transformation that takes a function and applied the function to each element of the input RDD. The result of the function will become the value of each element in the reulst RDD.
+ 
 flatMap()
 flatMap() is the transformation that takes a function and applies the function to each elements of the RDD as in map().
 The differenct is that flapMap will retunr multiple values for each elements in the source RDD

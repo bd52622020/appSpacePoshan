@@ -38,6 +38,11 @@ With threading, concurrency is achieved using multiple threads, but due to the G
 Both multithreading and multiprocessing allow Python code to run concurrently. But only multiprocessing will allow your code to be truly parallel. However, if your code is IO-heavy (like HTTP requests), then multithreading will still probably speed up your code.
 
 
+Data PipeLines:
+MovieSet : https://www.kaggle.com/rounakbanik/the-movies-dataset
 
+Suicide from 1985 to 2016: https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016
+
+Ecommerce : https://www.kaggle.com/carrie1/ecommerce-data
 
 
