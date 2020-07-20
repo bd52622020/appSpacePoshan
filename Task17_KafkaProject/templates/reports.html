@@ -1,0 +1,28 @@
+{% extends "template.html" %}
+{% block title %} Data-Analysis {% endblock %}
+
+{% block body %}
+Reports
+<div>
+    <fieldset style="width:0px;">
+    <legend>Total News by Section</legend>
+        <table>
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in df %}
+                <tr>
+                    <td>{% print(i["section"]) %}</td>
+                    <td>{% print(i["sum(counter)"]) %}</td>
+                </tr>
+             {% endfor %}
+            </tbody>
+        </table>
+    </fieldset>
+ </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "template.html" %}
+{% block title %} Data-Analysis {% endblock %}
+
+{% block body %}
+Total available data analysis
+<div>
+<table style="font-family: arial, sans-serif;
+            width: 100%;
+            font-size: 13px;
+            border: 1px solid aliceblue;">
+
+    <thead>
+        <tr>
+            <th>SN</th>
+            <th>Section</th>
+            <th>Title</th>
+            <th>Abstract</th>
+            <th>By Line</th>
+            <th>Item Type</th>
+            <th>Source</th>
+            <th>material Type facet</th>
+            <th>Counter</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% set count = namespace(value=1) %}
+        {% for i in dfs %}
+            <tr>
+                <td style="padding: 9px;">
+                    {{ count.value }}
+                    {% set count.value = count.value + 1 %}</td>
+                <td>{% print(i['section']) %}</td>
+                <td>{% print(i['title']) %}</td>
+                <td>{% print(i['abstract']) %}</td>
+                <td>{% print(i['byline']) %}</td>
+                <td>{% print(i['item_type']) %}</td>
+                <td>{% print(i['source']) %}</td>
+                <td>{% print(i['material_type_facet']) %}</td>
+                <td>{% print(i['counter']) %}</td>
+            </tr>
+        {% endfor%}
+
+    </tbody>
+</table>
+</div>
+
+{% endblock %}
